@@ -9,7 +9,10 @@ def index():
   
 @APP.route('/random')
 def myrandom():
-  return random.randint(0, 10)
+  try:
+    return random.randint(0, 10)
+  except e:
+    return e.message
 
 if __name__ == '__main__':
   bottle.run(application=APP)
